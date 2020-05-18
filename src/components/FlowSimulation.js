@@ -29,7 +29,8 @@ const FlowSimulation = () => {
 	const div = useRef();
 
 	const scale = 20;
-	const viewPortScaleThreshold = 800;
+	const viewPortSmallThreshold = 800;
+	const viewPortHugeThreshold = 1800;
 
 	const calculateSize = () => {
 		const deltaW = width - div?.current?.getBoundingClientRect().width;
@@ -38,10 +39,12 @@ const FlowSimulation = () => {
 		if (Math.abs(deltaW + deltaH) > 100) {
 			setWidth(div?.current?.getBoundingClientRect().width);
 			setHeight(div?.current?.getBoundingClientRect().height);
-			if (div?.current?.getBoundingClientRect().width <= viewPortScaleThreshold) {
+			if (div?.current?.getBoundingClientRect().width <= viewPortSmallThreshold) {
 				setViewScale(2);
-			} else {
+			}else if(div?.current?.getBoundingClientRect().width > viewPortHugeThreshold){
 				setViewScale(1);
+			} else {
+				setViewScale(1.5);
 			}
 		}
 	}
