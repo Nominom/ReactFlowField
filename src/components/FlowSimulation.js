@@ -12,7 +12,7 @@ const FlowSimulation = () => {
 	const [noiseScale, setNoiseScale] = useState(0.1);
 	const [scrollingMultiplier, setScrollingMultiplier] = useState(1);
 	const [particleAlpha, setParticleAlpha] = useState(0.01);
-	const [rgbParticles, setRgbParticles] = useState(false);
+	const [rgbParticles, setRgbParticles] = useState(true);
 	const [switchedColors, setSwitchedColors] = useState(false);
 	const [maxParticleSpeed, setMaxParticleSpeed] = useState(5);
 	const [numParticles, setNumParticles] = useState(1000);
