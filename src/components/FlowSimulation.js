@@ -28,7 +28,7 @@ const FlowSimulation = () => {
 	const canvas2 = useRef();
 	const div = useRef();
 
-	const scale = 20;
+	const numCols = 60;
 	const viewPortSmallThreshold = 800;
 	const viewPortHugeThreshold = 1800;
 
@@ -65,6 +65,7 @@ const FlowSimulation = () => {
 
 	const randomSeed = () => {
 		if (width > 0 && height > 0) {
+			const scale = (width * viewScale) / numCols;
 			setFlowField(new FlowField(width * viewScale, height * viewScale, scale));
 		}
 		clearCanvas();
@@ -97,7 +98,6 @@ const FlowSimulation = () => {
 
 				if (now - lastfps > 1000) {
 					const fps = 1000 / (now - last);
-					console.log('fps:', fps);
 					setFps(fps);
 					lastfps = now;
 				}
@@ -126,10 +126,7 @@ const FlowSimulation = () => {
 	}, [numParticles, width, height, viewScale, maxParticleSpeed]);
 
 	useEffect(() => {
-		if (width > 0 && height > 0) {
-			setFlowField(new FlowField(width * viewScale, height * viewScale, scale));
-		}
-		clearCanvas();
+		randomSeed();
 	}, [width, height, viewScale]);
 
 	useEffect(() => {
