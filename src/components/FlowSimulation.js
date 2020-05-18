@@ -8,7 +8,7 @@ const { FlowField } = require('./../flowfield/FlowField');
 
 
 const FlowSimulation = () => {
-	const [fieldStrength, setFieldStrength] = useState(0.6);
+	const [fieldStrength, setFieldStrength] = useState(0.4);
 	const [noiseScale, setNoiseScale] = useState(0.1);
 	const [scrollingMultiplier, setScrollingMultiplier] = useState(1);
 	const [particleAlpha, setParticleAlpha] = useState(0.01);
