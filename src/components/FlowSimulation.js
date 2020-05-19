@@ -11,7 +11,7 @@ const FlowSimulation = () => {
 	const [fieldStrength, setFieldStrength] = useState(0.4);
 	const [noiseScale, setNoiseScale] = useState(0.1);
 	const [scrollingMultiplier, setScrollingMultiplier] = useState(1);
-	const [particleAlpha, setParticleAlpha] = useState(0.01);
+	const [particleAlpha, setParticleAlpha] = useState(0.05);
 	const [rgbParticles, setRgbParticles] = useState(true);
 	const [switchedColors, setSwitchedColors] = useState(false);
 	const [maxParticleSpeed, setMaxParticleSpeed] = useState(5);
@@ -145,7 +145,8 @@ const FlowSimulation = () => {
 	return (
 		<div className="flex flex-col lg:flex-row-reverse min-h-screen">
 			<div className="flex-none w-full md:h-64 lg:h-screen lg:w-64 bg-gray-900 text-gray-200">
-				<div className="w-full h-full p-8 gap-4 grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 lg:grid-cols-1 lg:grid-rows-none">
+				<a className="w-full block text-center px-4 mt-1 text-orange-600 hover:underline" href="https://github.com/Nominom/ReactFlowField">Link to the code</a>
+				<div className="w-full h-full p-8 pt-4 gap-4 grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 lg:grid-cols-1 lg:grid-rows-none">
 					<div>
 						<Button onClick={clearCanvas} className="m-auto">Clear Canvas</Button>
 					</div>
